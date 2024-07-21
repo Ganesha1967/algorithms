@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.Arrays;
 
+
 public class Main {
     static int binarySearch(String[] myList, String naimForSearch) {
         int low = 0;
@@ -26,15 +27,23 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        String[] cars = {"Volvo", "BMW", "Ford", "Mazda", "Lada", "Audi"};
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please enter the number of objects in the list please: ");
+        int sizeOfList = sc.nextInt();
 
-        Arrays.sort(cars);
-
-        System.out.println("Enter a name of car please: ");
+        System.out.println("Start typing the name of the object: ");
+        String[] myList = new String[sizeOfList];
         Scanner in = new Scanner(System.in);
+
+        for (int i = 0; i < sizeOfList; i++) {
+            myList[i] = in.next();
+        }
+
+        Arrays.sort(myList);
+
+        System.out.println("Please enter the name of the object that you want to find in the list: ");
         String nameForSearch = in.next();
 
-        System.out.println(binarySearch(cars, nameForSearch));
-
+        System.out.println(binarySearch(myList, nameForSearch));
     }
 }
