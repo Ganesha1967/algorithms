@@ -28,7 +28,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Please enter the number of objects in the list please: ");
+        System.out.println("Enter the number of objects in the list please: ");
         int sizeOfList = sc.nextInt();
 
         System.out.println("Start typing the name of the object: ");
@@ -41,9 +41,16 @@ public class Main {
 
         Arrays.sort(myList);
 
-        System.out.println("Please enter the name of the object that you want to find in the list: ");
+        System.out.println("Enter a name of object that you want to find: ");
         String nameForSearch = in.next();
 
-        System.out.println(binarySearch(myList, nameForSearch));
+        int indexOfObject = binarySearch(myList, nameForSearch);
+
+        if (indexOfObject < 0) {
+            System.out.println("Unfortunately '" + nameForSearch + "' was not found");
+        }
+        else {
+            System.out.println("'" + nameForSearch + "' was found, which has an index of " + indexOfObject);
+        }
     }
 }
