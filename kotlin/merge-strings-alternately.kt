@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/merge-strings-alternately/?envType=study-plan-v2&envId=leetcode-75
+
 class Solution {
     fun mergeAlternately(word1: String, word2: String): String {
         var result = ""
@@ -34,3 +36,4 @@ class Solution {
         return result
     }
 }
+
