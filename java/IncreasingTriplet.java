@@ -1,23 +1,20 @@
-// https://leetcode.com/problems/increasing-triplet-subsequence/?envType=study-plan-v2&envId=leetcode-75
-// ПЕРЕПИСАТЬ БЕЗ ИСПОЛЬЗОВАНИЯ КОСТЫЛЯ!!!!!!!!!!!!!!!!!!!!!!
+// https://leetcode.com/problems/increasing-triplet-subsequence/
 
 class Solution {
     public boolean increasingTriplet(int[] nums) {
-        int lengthNums = nums.length;
-        int min = nums[0];
-        int middle = 1000_000;
+        int min = Integer.MAX_VALUE, middle = Integer.MAX_VALUE;
 
-        for (int i = 1; i < lengthNums; i++) {
-            if (min < middle && middle < nums[i] && middle != 1000_000) {
+        for (int num : nums) {
+            if (min < middle && middle < num) {
                 return true;
             }    
             
-            if (nums[i] > min) {
-                middle = nums[i];
+            if (num > min) {
+                middle = num;
             } 
 
-            if (nums[i] < min) {
-                min = nums[i];
+            if (num < min) {
+                min = num;
             }  
         }
 
